@@ -15,13 +15,13 @@
 //   }
 // }
 
-// function introduce() {
-//   console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
-// }
+// // function introduce() {
+// //   console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
+// // }
 
 // // Adding the fucntion to the object.
-// person.introduce = introduce;
-// person.introduce(); // usign the functioin as a method to the object.
+// // person.introduce = introduce;
+// // person.introduce(); // usign the functioin as a method to the object.
 
 
 // person.introduce1();
@@ -32,38 +32,38 @@
 // // Instantiating a Class
 
 
-// class Animal { 
-//     constructor (name, eyes, legs, isAwake, isMoving) {
-//       this.name = name;
-//       this.eyes = eyes;
-//       this.legs = legs;
-//       this.isAwake = isAwake;
-//       this.isMoving = isMoving;
-//     }
-//     sleep () {
-//       this.isAwake = false;
-//     }
-//     wake () {
-//       this.isAwake = true;
-//     }
-//     walk () {
-//       this.isMoving = true;
-//     }
-//     sit () {
-//       this.isMoving = false;
-//     }
-//     speak (sound) {
-//       console.log(`The sound of ${this.name} is ${sound}`);
-//     }
-//     toString(animal = this.name) {
-//       return `This ${animal} has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
-//     }
-// }
+class Animal { 
+    constructor (name, eyes, legs, isAwake, isMoving) {
+      this.name = name;
+      this.eyes = eyes;
+      this.legs = legs;
+      this.isAwake = isAwake;
+      this.isMoving = isMoving;
+    }
+    sleep () {
+      this.isAwake = false;
+    }
+    wake () {
+      this.isAwake = true;
+    }
+    walk () {
+      this.isMoving = true;
+    }
+    sit () {
+      this.isMoving = false;
+    }
+    speak (sound) {
+      console.log(`The sound of ${this.name} is ${sound}`);
+    }
+    toString(animal = this.name) {
+      return `This ${animal} has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
+    }
+}
 
 
 // class Cat extends Animal {
 //   constractor (fur, isAwake, isMoving) {
-//     super(2, 4, isAwake, isMoving);
+//   //  super(2, 4, isAwake, isMoving);
 //     this.fur = fur;
 //   }
 //   speak () {
@@ -98,3 +98,40 @@
 
 // console.log(cat1.toString());
 
+
+class Humsan extends Animal {
+  constructor (name, eyes, legs, isAwake, isMoving) {
+    this.name = name;
+    this.eyes = eyes;
+    this.legs = legs;
+    this.isAwake = isAwake;
+    this.isMoving = isMoving;
+  }
+  introduce2 () {  //The function has been added to the object.
+    console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
+  }   
+}
+
+Humsan.introduce2("Mustafa", 2,2,true,true);
+
+
+class Learner {
+  #grades = [];
+  name = {
+    first: '',
+    last: '',
+  };
+  age = '';
+  cert = "";
+
+	constructor(firstName, lastName, age, cert) {
+		this.name.first = firstName;
+    this.name.last = lastName;
+    this.age = age;
+    this.cert = cert;
+	}
+}
+
+const learner1 = new Learner('Leeroy', 'Jenkins', "18", "BSc");
+
+console.log(learner1);
