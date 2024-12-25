@@ -22,9 +22,8 @@ function introduce() {
 }
 
 // Adding the fucntion to the object.
-person.introduce = introduce;
+person.introduce1 = introduce;
 person.introduce1(); // usign the functioin as a method to the object.
-
 
 person.introduce1();
 
@@ -34,14 +33,14 @@ person.introduce1();
 // Instantiating a Class
 
 
-class Animal { 
-    constructor (name, eyes, legs, isAwake, isMoving) {
-      this.name = name;
-      this.eyes = eyes;
-      this.legs = legs;
-      this.isAwake = isAwake;
-      this.isMoving = isMoving;
-    }
+// class Animal { 
+//     constructor (name, eyes, legs, isAwake, isMoving) {
+//       this.name = name;
+//       this.eyes = eyes;
+//       this.legs = legs;
+//       this.isAwake = isAwake;
+//       this.isMoving = isMoving;
+//     }
     // sleep () {
     //   this.isAwake = false;
     // }
@@ -61,13 +60,13 @@ class Animal {
     //   return `This ${animal} has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
     // }
     
-}
+// }
 
-function insertAnimal (name, eyes, legs) {
-  console.log(`${this.name} is an animal, it has ${eyes} eyes and ${legs} legs. `);
-}
+// function insertAnimal (name, eyes, legs) {
+//   console.log(`${this.name} is an animal, it has ${eyes} eyes and ${legs} legs. `);
+// }
 
-Animal.insertAnimal("TOM", 2, 4, );
+// Animal.insertAnimal("TOM", 2, 4, );
 
 
 
@@ -109,18 +108,18 @@ Animal.insertAnimal("TOM", 2, 4, );
 // console.log(cat1.toString());
 
 
-class Human extends Animal {
-  constructor (name, age) {
-    super(name, age)
-    this.name = name;
-    this.age = age;
-  }
-  introduce2 () {  //The function has been added to the object.
-    console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
-  }   
-}
+// class Human extends Animal {
+//   constructor (name, age) {
+//     super(name, age)
+//     this.name = name;
+//     this.age = age;
+//   }
+//   introduce2 () {  //The function has been added to the object.
+//     console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
+//   }   
+// }
 
-Human.introduce2();
+// Human.introduce2();
 
 // Humsan.introduce2("Mustafa", 2,2,true,true);
 
