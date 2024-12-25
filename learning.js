@@ -1,35 +1,37 @@
-// const person = {
-//   name: {
-//     first: 'Elyan',
-//     last: 'Kemble',
-//   },
-//   age: 32,
-//   location: {
-//     city: 'Garland',
-//     state: 'Texas',
-//     zip: 75040
-//   },
-//   occupation: 'Front-End Developer',
-//   introduce1 () {  //The function has been added to the object.
-//     console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
-//   }
-// }
-
-// // function introduce() {
-// //   console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
-// // }
-
-// // Adding the fucntion to the object.
-// // person.introduce = introduce;
-// // person.introduce(); // usign the functioin as a method to the object.
+const person = {
+  name: {
+    first: 'Elyan',
+    last: 'Kemble',
+  },
+  age: 32,
+  location: {
+    city: 'Garland',
+    state: 'Texas',
+    zip: 75040
+  },
+  occupation: 'Front-End Developer',
+  introduce1 () {  //The function has been added to the object.
+    console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
+  }
+}
 
 
-// person.introduce1();
+// pasing the object's properties in as arguments
+function introduce() {
+  console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
+}
 
-// // Classes: The reason that we need classes is becuase when we have multiple objects have been created! That's mean we need to add the function to each object we created which is not a practical solution. Thatr why we need the classes for large projects.
+// Adding the fucntion to the object.
+person.introduce = introduce;
+person.introduce1(); // usign the functioin as a method to the object.
 
 
-// // Instantiating a Class
+person.introduce1();
+
+// Classes: The reason that we need classes is becuase when we have multiple objects have been created! That's mean we need to add the function to each object we created which is not a practical solution. Thatr why we need the classes for large projects.
+
+
+// Instantiating a Class
 
 
 class Animal { 
@@ -40,25 +42,33 @@ class Animal {
       this.isAwake = isAwake;
       this.isMoving = isMoving;
     }
-    sleep () {
-      this.isAwake = false;
-    }
-    wake () {
-      this.isAwake = true;
-    }
-    walk () {
-      this.isMoving = true;
-    }
-    sit () {
-      this.isMoving = false;
-    }
-    speak (sound) {
-      console.log(`The sound of ${this.name} is ${sound}`);
-    }
-    toString(animal = this.name) {
-      return `This ${animal} has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
-    }
+    // sleep () {
+    //   this.isAwake = false;
+    // }
+    // wake () {
+    //   this.isAwake = true;
+    // }
+    // walk () {
+    //   this.isMoving = true;
+    // }
+    // sit () {
+    //   this.isMoving = false;
+    // }
+    // speak (sound) {
+    //   console.log(`The sound of ${this.name} is ${sound}`);
+    // }
+    // toString(animal = this.name) {
+    //   return `This ${animal} has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
+    // }
+    
 }
+
+function insertAnimal (name, eyes, legs) {
+  console.log(`${this.name} is an animal, it has ${eyes} eyes and ${legs} legs. `);
+}
+
+Animal.insertAnimal("TOM", 2, 4, );
+
 
 
 // class Cat extends Animal {
@@ -99,39 +109,39 @@ class Animal {
 // console.log(cat1.toString());
 
 
-class Humsan extends Animal {
-  constructor (name, eyes, legs, isAwake, isMoving) {
+class Human extends Animal {
+  constructor (name, age) {
+    super(name, age)
     this.name = name;
-    this.eyes = eyes;
-    this.legs = legs;
-    this.isAwake = isAwake;
-    this.isMoving = isMoving;
+    this.age = age;
   }
   introduce2 () {  //The function has been added to the object.
     console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
   }   
 }
 
-Humsan.introduce2("Mustafa", 2,2,true,true);
+Human.introduce2();
+
+// Humsan.introduce2("Mustafa", 2,2,true,true);
 
 
-class Learner {
-  #grades = [];
-  name = {
-    first: '',
-    last: '',
-  };
-  age = '';
-  cert = "";
+// class Learner {
+//   #grades = [];
+//   name = {
+//     first: '',
+//     last: '',
+//   };
+//   age = '';
+//   cert = "";
 
-	constructor(firstName, lastName, age, cert) {
-		this.name.first = firstName;
-    this.name.last = lastName;
-    this.age = age;
-    this.cert = cert;
-	}
-}
+// 	constructor(firstName, lastName, age, cert) {
+// 		this.name.first = firstName;
+//     this.name.last = lastName;
+//     this.age = age;
+//     this.cert = cert;
+// 	}
+// }
 
-const learner1 = new Learner('Leeroy', 'Jenkins', "18", "BSc");
+// const learner1 = new Learner('Leeroy', 'Jenkins', "18", "BSc");
 
-console.log(learner1);
+// console.log(learner1);
