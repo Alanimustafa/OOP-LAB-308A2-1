@@ -6,8 +6,13 @@
 
 
 class Animal { 
-    constructor (name, eyes, legs, isAwake, isMoving) {
-      this.name = name;
+    constructor (firstName, lastName, age, city, state, zipCode, eyes, legs, isAwake, isMoving) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.city = city;
+      this.state = state;
+      this.zipCode = zipCode;
       this.eyes = eyes;
       this.legs = legs;
       this.isAwake = isAwake;
@@ -29,7 +34,7 @@ class Animal {
       console.log(`The sound of ${this.name} is ${sound}`);
     }
     toString(animal = 'an Animal') {
-      return `${this.name} is ${animal}, it has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
+      return `${this.firstName} is ${animal}, it has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
     }
   }
 
@@ -50,9 +55,9 @@ class Animal {
 
 // Cat Extends Animal
 class Cat extends Animal {
-  constructor (name, isAwake, fur, isMoving) // This constrauctor is only for the Cat Class and it will receive the data of (Fur, isAwake and isMoving) when we create the cat1
+  constructor (firstName, isAwake, fur, isMoving) // This constrauctor is only for the Cat Class and it will receive the data of (Fur, isAwake and isMoving) when we create the cat1
   {
-    super(name, 2, 4, isAwake, isMoving) // We passed to the Animal class that Cat class has 2 eyes and 4 legs permenantly.
+    super(firstName, false, false, false, false, false, 2, 4, isAwake, isMoving); // We passed to the Animal class that Cat class has 2 eyes and 4 legs permenantly.
     this.fur = fur;
   }
   speak () {
@@ -73,8 +78,8 @@ console.log (cat1.toString());
 
 // Dog Extends Animal
 class Dog extends Animal {
-  constructor(name, fur, isAwake, isMoving) {
-    super(name, 2, 4, isAwake, isMoving);
+  constructor(firstName, fur, isAwake, isMoving) {
+    super(firstName, false, false, false, false, false, 2, 4, isAwake, isMoving);
     this.fur = fur;
   }
   speak() {
@@ -95,8 +100,8 @@ console.log (dog1.toString());
 
 //Cow Extends Animal
 class Cow extends Animal {
-  constructor(name, hair, isAwake, isMoving) {
-    super(name, 2, 4, isAwake, isMoving);
+  constructor(firstName, hair, isAwake, isMoving) {
+    super(firstName, false, false, false, false, false, 2, 4, isAwake, isMoving);
     this.hair = hair;
   }
   speak() {
@@ -110,3 +115,16 @@ class Cow extends Animal {
 const cow1 = new Cow ("Cowee",true, true, true);
 console.log(cow1);
 console.log(cow1.toString())
+
+
+
+// Creating the Human class extended from Animal
+class Human extends Animal {
+  constructor (firstName, lastName, age, city, state, zipCode, isAwake, isMoving) {
+    super(firstName, lastName, age, city, state, zipCode, 2, 2, isAwake, isMoving)
+  }
+}
+
+const mustafa = new Human ("Mustafa", "Alani", 46, "Chicago", "Illinois", 60073, true, true);
+
+console.log(mustafa);
