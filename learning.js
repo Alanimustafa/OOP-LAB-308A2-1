@@ -39,10 +39,11 @@ class Learner {
   }
   #age;
 
-	constructor(firstName, lastName, age) {
+	constructor(firstName, lastName, age, grades) {
 		this.#name.first = firstName;
     this.#name.last = lastName;
     this.#age = age;
+    this.#grades = grades;
 	}
   get name () { // usind the get method to make the name and age accessable when we need
     return this.#name.first + ' ' + this.#name.last;
@@ -50,15 +51,21 @@ class Learner {
   get age () {
     return this.#age;
   }
+  get grades () {
+    return this.#grades;
+  }
   set grades (grade) { // The setter her is to set that the grades have to be numbers, and they should be between 0 and 100.
     grade = Number(grade); // Grades have to be numbers.
     if (grade >= 0 && grade <= 100 ) { 
       this.#grades.push(grade);
-      }
+      } 
   }
 }
 
-const learner1 = new Learner('Leeroy', 'Jenkins', 18);
+const learner1 = new Learner('Leeroy', 'Jenkins', 18, [100, 80, 90,"90", "Ahmed"]);
 learner1.age = 26; // neither the age nor the name can be changed after the intialization because they are private. when we used get we made the accessable but they are privately accessed.
 learner1.name = 'Mustafa'; 
-console.log(`the learner 1 first name is :  ${learner1.name} and is ${learner1.age} years old`);
+learner1.grades = 75;
+learner1.grades = 65;
+learner1.grades = "ali";
+console.log(`the learner 1 first name is :  ${learner1.name} and is ${learner1.age} years old. the grades are ${learner1.grades}`);
