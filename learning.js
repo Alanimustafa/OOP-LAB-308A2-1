@@ -89,3 +89,36 @@ console.log(mustafaAlani);
 
 mustafaAlani.addGrades([[95, 87, 66], "98", "100", -60, 88, 89, [100, 76, 88], 105]);
 console.log(mustafaAlani);
+
+
+
+// using the instance of opersator 
+
+console.log(mustafaAlani instanceof Object) ;
+
+
+
+
+
+
+
+Array.prototype.min = function () {
+  return Math.min(...this);
+};
+Array.prototype.max = function () {
+  return Math.max(...this);
+};
+
+const arr = [3, 8, 1, -10, 90, 77, 42];
+const min = arr.min();
+const max = arr.max();
+
+
+console.log([10, 20, 0, -30, 50, 100].min());
+
+
+const arr1 = [3, 8, 1, -10, 90, 77, 42];
+const min1 = arr1.min();
+const max1 = arr1.max();
+
+console.log(arr1.min());
