@@ -25,7 +25,7 @@ function introduce() {
 person.introduce1 = introduce;
 person.introduce1(); // usign the functioin as a method to the object.
 
-person.introduce1();
+// person.introduce1();
 
 
 
@@ -44,6 +44,13 @@ class Learner {
     this.#name.last = lastName;
     this.#age = age;
 	}
+  get name () { // usind the get method to make the name and age accessable when we need
+    return this.#name.first + ' ' + this.#name.last;
+  }
+  get age () {
+    return this.#age;
+  }
 }
 
 const learner1 = new Learner('Leeroy', 'Jenkins', 18);
+console.log(`the learner 1 first name is :  ${learner1.name} and is ${learner1.age} years old`);
