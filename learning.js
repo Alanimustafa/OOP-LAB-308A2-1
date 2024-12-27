@@ -51,21 +51,41 @@ class Learner {
   get age () {
     return this.#age;
   }
+  
+  // I removed the grade setter and created this function to add grades since they are Numbers and between 0 and 100 to make the code more descriptive. 
+  addGrades(...grades) {
+    grades = grades.flat();
+    grades.forEach((grade) => {
+      grade = Number(grade);
+
+      if (grade >= 0 && grade <= 100) {
+        this.#grades.push(grade);
+      }
+    });
+  }
   get grades () {
     return this.#grades;
   }
-  set grades (grade) { // The setter her is to set that the grades have to be numbers, and they should be between 0 and 100.
-    grade = Number(grade); // Grades have to be numbers.
-    if (grade >= 0 && grade <= 100 ) { 
-      this.#grades.push(grade);
-      } 
+  get average() {
+    const arr = [...this.#grades];
+    arr.sort((a, b) => a - b).shift();
+
+    return arr.reduce((a, b) => a + b) / arr.length;
   }
+  
 }
 
-const learner1 = new Learner('Leeroy', 'Jenkins', 18, [100, 80, 90,"90", "Ahmed"]);
+const learner1 = new Learner('Leeroy', 'Jenkins', 18, [100, 80, 90,100]);
 learner1.age = 26; // neither the age nor the name can be changed after the intialization because they are private. when we used get we made the accessable but they are privately accessed.
 learner1.name = 'Mustafa'; 
 learner1.grades = 75;
 learner1.grades = 65;
 learner1.grades = "ali";
-console.log(`the learner 1 first name is :  ${learner1.name} and is ${learner1.age} years old. the grades are ${learner1.grades}`);
+console.log(`the learner 1 first name is :  ${learner1.name} and is ${learner1.age} years old. the grades are ${learner1.grades}. the grades average is : ${learner1.average.toFixed(2)}%`);
+
+const mustafaAlani = new Learner ('Mustafa', 'Alani', 46, [100, 75, 80, 55]);
+
+console.log(mustafaAlani);
+
+mustafaAlani.addGrades([[95, 87, 66], "98", "100", -60, 88, 89, [100, 76, 88], 105]);
+console.log(mustafaAlani);
