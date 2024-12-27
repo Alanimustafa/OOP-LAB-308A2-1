@@ -26,3 +26,24 @@ person.introduce1 = introduce;
 person.introduce1(); // usign the functioin as a method to the object.
 
 person.introduce1();
+
+
+
+// Encapsulation
+
+class Learner {
+  #grades = [];
+  #name = {
+    first: '',
+    last: '',
+  }
+  #age;
+
+	constructor(firstName, lastName, age) {
+		this.#name.first = firstName;
+    this.#name.last = lastName;
+    this.#age = age;
+	}
+}
+
+const learner1 = new Learner('Leeroy', 'Jenkins', 18);
