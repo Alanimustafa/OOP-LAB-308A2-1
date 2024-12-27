@@ -50,7 +50,15 @@ class Learner {
   get age () {
     return this.#age;
   }
+  set grades (grade) { // The setter her is to set that the grades have to be numbers, and they should be between 0 and 100.
+    grade = Number(grade); // Grades have to be numbers.
+    if (grade >= 0 && grade <= 100 ) { 
+      this.#grades.push(grade);
+      }
+  }
 }
 
 const learner1 = new Learner('Leeroy', 'Jenkins', 18);
+learner1.age = 26; // neither the age nor the name can be changed after the intialization because they are private. when we used get we made the accessable but they are privately accessed.
+learner1.name = 'Mustafa'; 
 console.log(`the learner 1 first name is :  ${learner1.name} and is ${learner1.age} years old`);
